@@ -12,8 +12,8 @@
                 launchApp: function() {
                     var now = new Date().valueOf();
                     setTimeout(function () {
-                        if (new Date().valueOf() - now > 50) return;
-                        window.location = storeUrl;
+                        if ((new Date().valueOf() - now) > 20) return;
+                            window.location = storeUrl;
                     }, 25);
                     window.location = "iinvest://";
                 }
