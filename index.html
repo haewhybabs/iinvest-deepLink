@@ -17,12 +17,12 @@
                     // old way - "return" - but this would just leave a blank page in users browser
                     //return;  
                 }
-                if (iOS == 1) {
+                if (iOS) {
                     // still can't avoid the "invalid address" safari pops up
                     // but at least we can explain it to users
                     var msg = "i-invest not installed.\n\nREDIRECTING TO APP STORE" ;
                 } else {
-                    var msg = "MyApp NOT DETECTED\n\nREDIRECTING TO APP STORE" ;
+                    var msg = "i-invest not installed\n\nREDIRECTING TO APP STORE" ;
                 }
                 if (window.confirm(msg)) {
                     window.location = storeUrl;
