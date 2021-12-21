@@ -17,20 +17,19 @@
                         // old way - "return" - but this would just leave a blank page in users browser
                         //return;  
                     }
-                    window.location = storeUrl;
-                    // if (iOS) {
-                    //     // still can't avoid the "invalid address" safari pops up
-                    //     // but at least we can explain it to users
-                    //     var msg = "i-invest not installed.\n\nREDIRECTING TO APP STORE" ;
-                    // } else {
-                    //     var msg = "i-invest not installed\n\nREDIRECTING TO APP STORE" ;
-                    // }
-                    // if (window.confirm(msg)) {
-                        
-                    //     // scenario #2 - will leave a blank tab in browser
-                    // } else {
-                    //     window.close() ;  // scenario #3
-                    // }
+                    if (iOS) {
+                        // still can't avoid the "invalid address" safari pops up
+                        // but at least we can explain it to users
+                        var msg = "i-invest not installed.\n\nREDIRECTING TO APP STORE" ;
+                    } else {
+                        var msg = "i-invest not installed\n\nREDIRECTING TO APP STORE" ;
+                    }
+                    if (window.confirm(msg)) {
+                        window.location = storeUrl;
+                        // scenario #2 - will leave a blank tab in browser
+                    } else {
+                        window.close() ;  // scenario #3
+                    }
                 }, 50);
                 window.location = 'iinvest://';  
                 })();
