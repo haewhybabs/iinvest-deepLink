@@ -8,17 +8,13 @@
             (function() {
                 const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
                 var storeUrl=iOS?'https://apps.apple.com/ng/app/i-invest/id1381126486':'https://play.google.com/store/apps/details?id=com.cousant.naijainvest';
-                var app = {
-                launchApp: function() {
-                    var now = new Date().valueOf();
-                    setTimeout(function () {
-                        if ((new Date().valueOf() - now) > 100) return;
-                            window.location = storeUrl;
-                    }, 50);
-                    window.location = "iinvest://";
-                }
-                };
-                app.launchApp();
+                
+                var now = new Date().valueOf();
+                setTimeout(function () {
+                    if ((new Date().valueOf() - now) > 100) return;
+                        window.location = storeUrl;
+                }, 50);
+                window.location = "iinvest://";
                 })();
         </script>
     </body>
