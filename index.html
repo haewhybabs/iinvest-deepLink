@@ -11,25 +11,26 @@
                 
                 var now = new Date().valueOf();
                 setTimeout(function () {
-                // time stamp comaprison prevents redirecting to app store a 2nd time
-                if (new Date().valueOf() - now > 100) {
-                    window.close() ;  // scenario #4
-                    // old way - "return" - but this would just leave a blank page in users browser
-                    //return;  
-                }
-                if (iOS) {
-                    // still can't avoid the "invalid address" safari pops up
-                    // but at least we can explain it to users
-                    var msg = "i-invest not installed.\n\nREDIRECTING TO APP STORE" ;
-                } else {
-                    var msg = "i-invest not installed\n\nREDIRECTING TO APP STORE" ;
-                }
-                if (window.confirm(msg)) {
+                    // time stamp comaprison prevents redirecting to app store a 2nd time
+                    if (new Date().valueOf() - now > 100) {
+                        window.close() ;  // scenario #4
+                        // old way - "return" - but this would just leave a blank page in users browser
+                        //return;  
+                    }
                     window.location = storeUrl;
-                    // scenario #2 - will leave a blank tab in browser
-                } else {
-                    window.close() ;  // scenario #3
-                }
+                    // if (iOS) {
+                    //     // still can't avoid the "invalid address" safari pops up
+                    //     // but at least we can explain it to users
+                    //     var msg = "i-invest not installed.\n\nREDIRECTING TO APP STORE" ;
+                    // } else {
+                    //     var msg = "i-invest not installed\n\nREDIRECTING TO APP STORE" ;
+                    // }
+                    // if (window.confirm(msg)) {
+                        
+                    //     // scenario #2 - will leave a blank tab in browser
+                    // } else {
+                    //     window.close() ;  // scenario #3
+                    // }
                 }, 50);
                 window.location = 'iinvest://';  
                 })();
